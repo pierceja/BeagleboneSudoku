@@ -35,7 +35,7 @@ function queryVision(path) {
       console.error('error', err, body.error);
       process.exit(1);
     }
-   // console.log("Here are the results");
+   //console.log("Here are the results");
     console.log(JSON.stringify(body.responses[0], undefined, 2));
   });
 }

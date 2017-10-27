@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 // Draws boxes around individual letters
 const fs = require('fs');
 const util = require('util');
@@ -11,13 +12,20 @@ var vertices = vision.textAnnotations[0].boundingPoly.vertices;
 
 // console.log(vertices);
 var bigBox = " -fill none -stroke green -strokewidth 1 -draw \"polygon ";
+
+var txtFile= "~/BeagleboneSudoku/boggle/output.txt";
+var file = new File(txtFile);
+file.open("w");
+
+
 for(var j in vertices) {
     bigBox += vertices[j].x + ',' + vertices[j].y + ' ';
 }
 bigBox += "\" ";
 bigBox += "-annotate +0+40 \"" + vision.textAnnotations[0].description + "\" ";
+console.log("hello");
 console.log("\n" + vision.textAnnotations[0].description);
-
+file.write(vision.textAnnotations[0].description);
 // console.log(bigBox);
 
 // console.log(vision.fullTextAnnotation.pages[0].blocks[0].paragraphs[0].words[0].symbols);

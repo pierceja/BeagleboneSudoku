@@ -23,8 +23,9 @@ else echo Failure; exit 1
 fi
 
 # echo "Marking boxes"
-./boxText.js $FRAME $JSON
+#./boxText.js $FRAME $JSON
 
+./jsonparse.py
 # Append 4 images into one
 # convert \( frame0.jpg frame90.jpg +append \) \
 #     \( frame180.jpg frame270.jpg +append \) -append tmp.jpg
