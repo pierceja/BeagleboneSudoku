@@ -6,7 +6,7 @@ with open('wordpuzzle.json') as data_file:
 	file=data_file.read()
 	data=json.loads(file)
 
-file=open("output.txt","w")
+file=open("hardoutput.txt","w")
 
 
 file.write(data['textAnnotations'][0]['description'])

@@ -1,6 +1,6 @@
 # From exploringBB/chp12/fswebcam
 #Joey: I changed the code below to use the test25 image
-FRAME=wordpuzzle.jpg
+FRAME=HardSudoku.JPG
 JSON=wordpuzzle.json
 
 #Joey: I commented out the code below because we are not using a camera
