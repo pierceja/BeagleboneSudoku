@@ -1,6 +1,6 @@
 # From exploringBB/chp12/fswebcam
 #Joey: I changed the code below to use the test25 image
-FRAME=HardSudoku.JPG
+FRAME=wordpuzzlenogrid.jpg
 JSON=wordpuzzle.json
 
 #Joey: I commented out the code below because we are not using a camera
@@ -29,3 +29,7 @@ fi
 # Append 4 images into one
 # convert \( frame0.jpg frame90.jpg +append \) \
 #     \( frame180.jpg frame270.jpg +append \) -append tmp.jpg
+echo Displaying Image
+`sudo convert -size 150x150 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@output.txt" output.png`
+./on.sh
+`sudo fbi -noverbose -T 1 -a output.png`
