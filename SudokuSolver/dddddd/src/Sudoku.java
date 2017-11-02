@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Sudoku {
@@ -14,12 +13,14 @@ public class Sudoku {
 		String filename = args[0];
 		File inputFile = new File(filename);
 		Scanner input = null;
+		correction.correct(filename);
+		File intermediatefile=new File("output2\\Imagecorrection" + filename.substring(6));
 
 		int temp = 0;
 		int count = 0;
 
 		try {
-			input = new Scanner(inputFile);
+			input = new Scanner(intermediatefile);
 			temp = input.nextInt();
 			boardSize = temp;
 			partitionSize = (int) Math.sqrt(boardSize);
@@ -80,6 +81,8 @@ public class Sudoku {
 
 
 	}
+
+
 
 	private static boolean checkNum(int row, int line, int number) {
 		for (int i = 0; i < boardSize; i++) {
