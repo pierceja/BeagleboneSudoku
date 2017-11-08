@@ -63,7 +63,7 @@ public class correction {
 		}		
 		try {
             PrintWriter output;
-               output = new PrintWriter("/home/debian/BeagleboneSudoku/boggle/dddddd/src/ImageCorrection.txt");
+               output = new PrintWriter("/home/debian/BeagleboneSudoku/boggle/ImageCorrection.txt");
                // Output
                output.println(boardSize);
                System.out.println("\nOutput\n");

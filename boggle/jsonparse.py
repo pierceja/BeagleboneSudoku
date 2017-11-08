@@ -11,3 +11,13 @@ file=open("output.txt","w")
 
 file.write(data['textAnnotations'][0]['description'])
 file.close()
+file=open("output.txt", "r")
+file2=open("correctedoutput.txt", "w")
+for line in file:
+	newLine = True
+	for digit in line:
+		if(digit=="\n"):
+			file2.write(digit)
+		else:
+			file2.write(digit + " ")
+file.close()

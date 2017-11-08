@@ -14,7 +14,7 @@ public class Sudoku {
 		File inputFile = new File(filename);
 		Scanner input = null;
 		correction.correct(filename);
-		File intermediatefile=new File("/home/debian/BeagleboneSudoku/boggle/dddddd/src/ImageCorrection.txt");
+		File intermediatefile=new File("/home/debian/BeagleboneSudoku/boggle/ImageCorrection.txt");
 
 		int temp = 0;
 		int count = 0;

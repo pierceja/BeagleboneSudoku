@@ -1,6 +1,6 @@
 # From exploringBB/chp12/fswebcam
 #Joey: I changed the code below to use the test25 image
-FRAME=grabber000.ppm
+FRAME=bigpuzzle.jpg
 JSON=wordpuzzle.json
 
 #Joey: I commented out the code below because we are not using a camera
@@ -33,19 +33,19 @@ fi
 echo Displaying Image
 
 #Joey: Convert the text file of detected digits to an image
-`sudo convert -size 150x150 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@output.txt" output.png`
+`sudo convert -size 150x150 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@correctedoutput.txt" correctedoutput.png`
 
 #Joey: display the sudoku image
-`sudo fbi -noverbose -T 1 -a output.png`
+`sudo fbi -noverbose -T 1 -a correctedoutput.png`
 
 #Joey: This program waits for an interrupt on GP1_3 to start solving
 ./interruptHandler.py
 
 #Joey: This is our puzzle solver program
-`java Sudoku test.txt` 
+`java Sudoku correctedoutput.txt` 
 
 #Joey: Convert the resulting solution text file into an image
-`sudo convert -size 150x150 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@solution.txt" solution.png`
+`sudo convert -size 200x200 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@solution.txt" solution.png`
 
 `sudo fbi -noverbose -T 1 -a solution.png`
 
