@@ -18,6 +18,11 @@ for line in file:
 	for digit in line:
 		if(digit=="\n"):
 			file2.write(digit)
-		else:
+
+		elif(digit=="D"):
+			file2.write("0")
+
+
+		elif(digit!="-" and digit!=" "):
 			file2.write(digit + " ")
 file.close()

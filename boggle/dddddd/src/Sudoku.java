@@ -64,7 +64,7 @@ public class Sudoku {
                    output.close();
                       return;
                }
-               output.println(boardSize);
+               //output.println(boardSize);
                System.out.println("\nOutput\n");
                for (int i = 0; i < boardSize; i++) {
                       for (int j = 0; j < boardSize; j++) {
