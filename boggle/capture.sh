@@ -25,9 +25,9 @@ JSON=wordpuzzle.json
 
 # echo Converting to gray
 # convert $FRAME -colorspace Gray $FRAME
-`convert -resize 1200X1200 grabber000.ppm grabber000.ppm`
-`convert grabber000.ppm -type Grayscale -negate -define morphology:compose=darken -morphology Thinning 'Rectangle:1x80+0+0<' -negate grabber000.ppm`
-`sudo fbi -noverbose -T 1 -a grabber000.ppm`
+`convert -resize 1200X1200 grabber000.ppm grabber000.jpg`
+`convert grabber000.jpg -type Grayscale -negate -define morphology:compose=darken -morphology Thinning 'Rectangle:1x80+0+0<' -negate grabber000.jpg`
+`sudo fbi -noverbose -T 1 -a grabber000.jpg`
 echo "Press button to send to Google"
 ./interruptHandler.py
 echo "Sending to Google"

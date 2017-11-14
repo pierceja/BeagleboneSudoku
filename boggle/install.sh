@@ -1,3 +1,13 @@
+#Install JDK for Java code
+apt-get install default-jdk
+
+#Install ImageMagick
+apt-get install imagemagick
+
+#Install request for API
+npm install request
+
+
 # From: http://www.egr.msu.edu/classes/ece480/capstone/fall13/group04/docs/briapp.pdf
 apt-get install v4l-utils libv4l-dev imagemagick
 gcc -lv4l2 -o grabber grabber.c
