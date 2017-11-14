@@ -1,1 +1,3 @@
 Our project is about implementing a sudoku solver on the BBB. We will first feed the picture of the unsolved 9x9 sudoku grid to the BeagleBone and display it onto the LCD. We are planning on using Google vision to convert the text (numbers) of the picture into a text file. Then we press a GPIO button to trigger the sudoku solver which takes a text file as an input and outputs the solved sudoku grid. The correct result will be shown on the LCD too. 
+
+Our Sudoku solver came from GitHub: https://github.com/Sanahm/SudoCAM-Ku. Our camera handling files came from a GitHub repository by Derek Molloy: https://github.com/derekmolloy/boneCV.git
