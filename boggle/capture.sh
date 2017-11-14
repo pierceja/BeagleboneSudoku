@@ -9,7 +9,6 @@ do
 done
 
 #Joey: I changed the code below to use the test25 image
-FRAME=grabber000.ppm
 JSON=wordpuzzle.json
 
 
@@ -28,6 +27,7 @@ JSON=wordpuzzle.json
 `convert -resize 1200X1200 grabber000.ppm grabber000.jpg`
 `convert grabber000.jpg -type Grayscale -negate -define morphology:compose=darken -morphology Thinning 'Rectangle:1x80+0+0<' -negate grabber000.jpg`
 `sudo fbi -noverbose -T 1 -a grabber000.jpg`
+FRAME=grabber000.jpg
 echo "Press button to send to Google"
 ./interruptHandler.py
 echo "Sending to Google"
@@ -44,14 +44,15 @@ fi
 # Append 4 images into one
 # convert \( frame0.jpg frame90.jpg +append \) \
 #     \( frame180.jpg frame270.jpg +append \) -append tmp.jpg
-echo Displaying Image
+echo "Displaying Image"
 
 #Joey: Convert the text file of detected digits to an image
-`sudo convert -size 150x150 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@correctedoutput.txt" correctedoutput.png`
+`sudo convert -size 150x150 xc:white -pointsize 12 -fill black \-annotate +15+15 "@correctedoutput.txt" correctedoutput.png`
 
 #Joey: display the sudoku image
 `sudo fbi -noverbose -T 1 -a correctedoutput.png`
 
+echo "Press button to solve the puzzle"
 #Joey: This program waits for an interrupt on GP1_3 to start solving
 ./interruptHandler.py
 
@@ -59,9 +60,9 @@ echo Displaying Image
 `java Sudoku correctedoutput.txt` 
 
 #Joey: Convert the resulting solution text file into an image
-`sudo convert -size 225x150 xc:white -font "FreeMono" -pointsize 12 -fill black \-annotate +15+15 "@solution.txt" solution.png`
+`sudo convert -size 225x150 xc:white -pointsize 12 -fill black \-annotate +15+15 "@solution.txt" solution.png`
 
-`convert -resize 213X300 boundingbox.PNG boundingbox.PNG`
+`convert -resize 185X160 boundingbox.PNG boundingbox.PNG`
 `composite -blend 30 solution.png boundingbox.PNG composedImg.png`
 
 `sudo fbi -noverbose -T 1 -a composedImg.png`
